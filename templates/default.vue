@@ -1,13 +1,10 @@
 <template>
-  <Tutorial/>
+  <Nuxt />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
-  mounted() {
-    console.log(this.$store.state);
-  }
+  
 })
 </script>

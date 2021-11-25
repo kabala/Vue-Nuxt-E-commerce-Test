@@ -14,7 +14,7 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "experimentalDecorators": true,"experimentalCompatMode": 2,
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
       "~/*": [

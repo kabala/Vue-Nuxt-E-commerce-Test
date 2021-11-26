@@ -12,11 +12,6 @@ type ActionArgs = {
   state: RootState
 }
 
-type ChangeProductQuantityArgs = {
-  productId: string
-  newQuantity: number
-}
-
 export enum infoView {
   iddle = 'iddle',
   product = 'product',
@@ -46,7 +41,7 @@ export const mutations = {
     const newProduct = { ...sentProduct, quantity: 1 }
     store.cart = [...store.cart, newProduct]
     store.products = store.products.map((product) =>
-      product.id === sentProduct.id ? newProduct : product
+      replaceObject(product, newProduct, 'id')
     )
   },
   removeProduct(store: RootState, sentProduct: Product) {
@@ -70,7 +65,6 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit({ state }: { state: RootState }) {
     const fakeProducts = await generateFakeData()
-    // console.log({ fakeProducts })
     state.products = fakeProducts
   },
   decreaseQuantityOrDelete({ commit }: ActionArgs, product: Product) {

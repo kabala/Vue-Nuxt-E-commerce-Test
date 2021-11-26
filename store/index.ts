@@ -41,13 +41,13 @@ export const mutations = {
     const newProduct = { ...sentProduct, quantity: 1 }
     store.cart = [...store.cart, newProduct]
     store.products = store.products.map((product) =>
-      replaceObject<Product>(product, newProduct, 'id')
+      replaceObject(product, newProduct)
     )
   },
   removeProduct(store: RootState, sentProduct: Product) {
     store.products = store.products.map((product) => {
       const { quantity, ...defaultProductInfo } = product
-      return replaceObject<Product>(product, defaultProductInfo, 'id')
+      return replaceObject(product, defaultProductInfo)
     })
     store.cart = store.cart.filter((product) => product.id !== sentProduct.id)
   },
@@ -64,7 +64,8 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ state }: { state: RootState }) {
-    const fakeProducts = await generateFakeData()
+    const generateFakeProducts = generateFakeData()
+    const fakeProducts = await Promise.all(generateFakeProducts)
     state.products = fakeProducts
   },
   decreaseQuantityOrDelete({ commit }: ActionArgs, product: Product) {
@@ -92,5 +93,10 @@ export const getters = {
     return state.products.find(
       (product) => product.id === state.selectedProductId
     )
+  },
+  cartTotalPrice(state: RootState): number {
+    return state.cart.length
+      ? state.cart.reduce((a, c) => a + c.price * (c.quantity || 1), 0)
+      : 0
   },
 }

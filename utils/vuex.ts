@@ -1,10 +1,10 @@
 import { Product, RootState } from '~/store'
 
-export function replaceObject<T>(
-  previous: T,
-  recent: T,
-  conditionalProperty: string
-): T {
+export function replaceObject(
+  previous: Product,
+  recent: Product,
+  conditionalProperty: string = 'id'
+): Product {
   return previous[conditionalProperty] !== recent[conditionalProperty]
     ? previous
     : recent
@@ -29,9 +29,9 @@ export function updateCartAndProducts(
   updatedProduct: Product
 ) {
   store.cart = store.cart.map((product) => {
-    return replaceObject<Product>(product, updatedProduct, 'id')
+    return replaceObject(product, updatedProduct, 'id')
   })
   store.products = store.products.map((product) => {
-    return replaceObject<Product>(product, updatedProduct, 'id')
+    return replaceObject(product, updatedProduct, 'id')
   })
 }

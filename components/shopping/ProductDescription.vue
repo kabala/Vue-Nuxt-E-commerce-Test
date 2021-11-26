@@ -23,6 +23,7 @@
           <span>unidades en el carrito</span>
           <div>
             <button
+              aria-label="increase product quantity"
               @click="
                 () => $store.commit('increaseProductQuantity', activeProduct)
               "
@@ -31,6 +32,7 @@
             </button>
             <span>{{ activeProduct.quantity }}</span>
             <button
+              aria-label="decrease product quantity"
               @click="
                 () => $store.dispatch('decreaseQuantityOrDelete', activeProduct)
               "

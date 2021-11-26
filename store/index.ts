@@ -41,7 +41,7 @@ export const mutations = {
     const newProduct = { ...sentProduct, quantity: 1 }
     store.cart = [...store.cart, newProduct]
     store.products = store.products.map((product) =>
-      replaceObject(product, newProduct, 'id')
+      replaceObject<Product>(product, newProduct, 'id')
     )
   },
   removeProduct(store: RootState, sentProduct: Product) {

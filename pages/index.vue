@@ -19,5 +19,8 @@ export default Vue.extend({
   mounted() {
     console.log(this.$store.state)
   },
+  async fetch({ store }) {
+    store.dispatch('getInitialProducts')
+  },
 })
 </script>

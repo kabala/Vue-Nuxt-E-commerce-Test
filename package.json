@@ -14,15 +14,19 @@
   },
   "dependencies": {
     "@vue/runtime-dom": "^3.2.22",
+    "axios": "^0.24.0",
     "core-js": "^3.15.1",
     "faker": "^5.5.3",
     "nuxt": "^2.15.7",
     "nuxt-edge": "latest",
     "nuxt-property-decorator": "^2.9.1",
+    "sass": "^1.43.5",
+    "sass-loader": "10",
     "tachyons-sass": "^4.9.5",
     "vue": "^2.6.14",
     "vue-breakpoint": "^2.1.0",
-    "vue-material-design-icons": "^4.13.0"
+    "vue-material-design-icons": "^4.13.0",
+    "vue-typed-mixins": "^0.2.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

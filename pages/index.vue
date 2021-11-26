@@ -6,7 +6,9 @@
       </div>
     </template>
     <ProductsList />
-    <template #aside>asdasdasdasd</template>
+    <template #aside>
+      <SidebarInfo />
+    </template>
   </DefaultLayoutVue>
 </template>
 
@@ -14,11 +16,14 @@
 import Vue from 'vue'
 import DefaultLayoutVue from '~/components/layoutParents/DefaultLayout.vue'
 import ProductsList from '~/components/shopping/ProductsList.vue'
+import SidebarInfo from '~/components/shopping/SidebarInfo.vue'
 
 export default Vue.extend({
-  components: { DefaultLayoutVue, ProductsList },
+  components: { DefaultLayoutVue, ProductsList, SidebarInfo },
+  /*
   async fetch({ store }) {
     store.dispatch('getInitialProducts')
   },
+  */
 })
 </script>

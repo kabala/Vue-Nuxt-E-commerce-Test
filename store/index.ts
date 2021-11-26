@@ -1,10 +1,10 @@
 import productsData, { BaseProduct } from '../mock/data'
 
-type Product = BaseProduct & { quantity?: number }
+export type Product = BaseProduct & { quantity?: number }
 
 type Store = {
-  products: Product[] | null
-  cart: Product[] | null
+  products: Product[]
+  cart: Product[]
 }
 
 type ActionArgs = {
@@ -17,9 +17,20 @@ type ChangeProductQuantityArgs = {
   newQuantity: number
 }
 
+enum infoView {
+  iddle = 'iddle',
+  product = 'product',
+  cart = 'cart',
+}
+
+type InfoviewStatus = {
+  status: infoView
+  info?: Product[] | Product
+}
+
 const initialState: Store = {
-  products: null,
-  cart: null,
+  products: [],
+  cart: [],
 }
 
 export const state = (): Store => initialState
@@ -39,9 +50,9 @@ export const mutations = {
 
 export const actions = {
   getInitialProducts({ commit, state }: ActionArgs) {
-    console.log('hi')
+    console.log('exists ', state.products.length)
 
-    if (!state.products) {
+    if (!state.products.length) {
       commit('setProducts', productsData)
     }
   },

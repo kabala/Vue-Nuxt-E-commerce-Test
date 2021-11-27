@@ -72,7 +72,8 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ state }: { state: RootState }) {
-    // state.products = fakeProducts
+    const fakeData = require('../fakeData.json')
+    state.products = fakeData
   },
   decreaseQuantityOrDelete({ commit }: ActionArgs, product: Product) {
     if (product.quantity === 1) {

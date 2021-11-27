@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from '@nuxt/bridge'
+import fs from 'fs'
 
 export default defineNuxtConfig({
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['tachyons-sass/tachyons.scss', '~/styles/style.scss'],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -35,11 +36,13 @@ export default defineNuxtConfig({
     // '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     // '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  tailwindcss: {
+    viewer: false,
+  },
 })

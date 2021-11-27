@@ -3,7 +3,15 @@ import {
   replaceObject,
   updateCartAndProducts,
 } from '~/utils/vuex'
-import generateFakeData, { BaseProduct } from '../mock/data'
+
+type BaseProduct = {
+  id: string
+  name: string
+  description: string
+  picture: string
+  price: number
+  ranking: number
+}
 
 export type Product = BaseProduct & { quantity?: number }
 
@@ -64,9 +72,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ state }: { state: RootState }) {
-    const generateFakeProducts = generateFakeData()
-    const fakeProducts = await Promise.all(generateFakeProducts)
-    state.products = fakeProducts
+    // state.products = fakeProducts
   },
   decreaseQuantityOrDelete({ commit }: ActionArgs, product: Product) {
     if (product.quantity === 1) {

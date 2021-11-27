@@ -1,0 +1,12 @@
+.h {
+  background-color: $primary;
+
+  &__inner {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    width: 100%;
+  }
+}

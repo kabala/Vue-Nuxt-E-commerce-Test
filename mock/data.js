@@ -1,19 +1,11 @@
-import axios from 'axios'
-import faker from 'faker'
+const axios = require('axios')
+const faker = require('faker')
+const fs = require('fs')
 
-export type BaseProduct = {
-  id: string
-  name: string
-  description: string
-  picture: string
-  price: number
-  ranking: number
-}
-
-function generateFakeData(): Promise<BaseProduct>[] {
-  const products: Promise<BaseProduct>[] = []
-  const generatorCb = (resolve: any) => {
-    const productName: string = faker.commerce.productName()
+function generateFakeData() {
+  const products = []
+  const generatorCb = (resolve) => {
+    const productName = faker.commerce.productName()
     axios
       .get(
         `https://source.unsplash.com/random/640x480/?${productName
@@ -33,9 +25,18 @@ function generateFakeData(): Promise<BaseProduct>[] {
       })
   }
   for (let i = 0; i < 10; i++) {
-    const generatorPromise: Promise<BaseProduct> = new Promise(generatorCb)
+    const generatorPromise = new Promise(generatorCb)
     products.push(generatorPromise)
   }
 
   return products
 }
+
+const generateFakeProducts = generateFakeData()
+
+Promise.all(generateFakeProducts)
+  .then((data) => {
+    console.log({ data })
+    fs.writeFileSync('fakeData.json', JSON.stringify(data))
+  })
+  .catch((e) => console.log(e))

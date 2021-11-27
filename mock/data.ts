@@ -18,7 +18,8 @@ function generateFakeData(): Promise<BaseProduct>[] {
       .get(
         `https://source.unsplash.com/random/640x480/?${productName
           .split(' ')
-          .at(-1)}`
+          .slice(-2)
+          .join(',')}`
       )
       .then(({ request }) => {
         resolve({
@@ -38,5 +39,3 @@ function generateFakeData(): Promise<BaseProduct>[] {
 
   return products
 }
-
-export default generateFakeData

@@ -1969,6 +1969,11 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
+"@tailwindcss/aspect-ratio@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.3.0.tgz#f779ab3f07cac848fb844122d6662ba6560010b8"
+  integrity sha512-DMgWskNJR6FNPLbQ8Xoq/PKV/9DfNKh5dvKB+SM8x7lVl4+pnxlZ3Ns4+yGmurA/ze708HrnCG1tXk85HolJmw==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -6667,7 +6672,7 @@ flat@^5.0.0:
   resolved "https://registry.yarnpkg.com/flat/-/flat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
   integrity sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==
 
-flatted@^3.1.0:
+flatted@^3.0.5, flatted@^3.1.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.4.tgz#28d9969ea90661b5134259f312ab6aa7929ac5e2"
   integrity sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==
@@ -13208,6 +13213,11 @@ tailwind-config-viewer@^1.6.2:
     portfinder "^1.0.26"
     replace-in-file "^6.1.0"
 
+tailwindcss-owl@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-owl/-/tailwindcss-owl-2.0.0.tgz#edcf192908967db6c49649820c85045ba52dac74"
+  integrity sha512-Lzotqn6hn8Q8n1mZC5XXUlvmZqogDk+U9YUoL39sweICtEA3FrTxhBhnUem9JiskYtqEPciDC2GaTyVvBGGkuA==
+
 tailwindcss@^2.2.2:
   version "2.2.19"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.2.19.tgz#540e464832cd462bb9649c1484b0a38315c2653c"
@@ -14225,6 +14235,14 @@ vuex-module-decorators@^1.0.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-1.2.0.tgz#efb9690ec8856041ce4e9762bc9b51dc264cd359"
   integrity sha512-3lHp75qVgrNXUpFKs4J4eRnrxjY3BYUkHwR+ZKvvIycw/7tDwlL0RPuiYLwrHEUBTvJePSZaehZJ0BMTw1/ugQ==
+
+vuex-persist@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/vuex-persist/-/vuex-persist-3.1.3.tgz#518c722a2ca3026bcee5732f99d24f75cee0f3b6"
+  integrity sha512-QWOpP4SxmJDC5Y1+0+Yl/F4n7z27syd1St/oP+IYCGe0X0GFio0Zan6kngZFufdIhJm+5dFGDo3VG5kdkCGeRQ==
+  dependencies:
+    deepmerge "^4.2.2"
+    flatted "^3.0.5"
 
 vuex@^3.6.2:
   version "3.6.2"

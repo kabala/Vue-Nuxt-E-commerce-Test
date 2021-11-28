@@ -1,7 +1,11 @@
 <template>
-  <div class="">
-    <div>{{ $store.state.products.length }}</div>
-    <div class="grid grid-flow-col grid-rows-6 gap-4">
+  <div>
+    <div>
+      <h2 class="font-semibold text-2xl text-secondary my-3">
+        Últimas Ofertas
+      </h2>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
       <div v-if="!$store.state.products.length">
         <h4>Lo sentimos, no hay productos que mostrar en este momento.</h4>
         <button>Obtener Productos</button>
@@ -23,8 +27,5 @@ import Product from './Product.vue'
 
 export default Vue.extend({
   components: { Product },
-  mounted() {
-    console.log(this.$store.state.products)
-  },
 })
 </script>

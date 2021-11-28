@@ -27,7 +27,7 @@ export enum infoView {
   cart = 'cart',
 }
 
-type Store = {
+export type Store = {
   products: Product[]
   cart: Product[]
   selectedProductId: string | null
@@ -68,6 +68,16 @@ export const mutations = {
   },
   showProductInfo(state: RootState, productInfo: Product) {
     state.selectedProductId = productInfo.id
+  },
+  hideProductInfo(state: RootState) {
+    state.selectedProductId = null
+  },
+  clearCart(state: RootState) {
+    state.cart = []
+    state.products = state.products.map((product) => {
+      const { quantity, ...defaultProductInfo } = product
+      return defaultProductInfo
+    })
   },
 }
 

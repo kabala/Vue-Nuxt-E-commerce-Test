@@ -33,7 +33,16 @@ module.exports = {
         800: '#007303',
         900: '#00640D',
       },
-      lightSecondary: '#f1f3e6',
+      lightSecondary: {
+        DEFAULT: '#F1F3E6',
+        300: '#FDFDFB',
+        400: '#F7F8F0',
+        500: '#F1F3E6',
+        600: '#E3E7CE',
+        700: '#D6DCB6',
+        800: '#C8D09E',
+        900: '#BBC586',
+      },
       white: colors.white,
       black: colors.black,
     },
@@ -41,5 +50,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-owl')],
 }

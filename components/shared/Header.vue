@@ -1,10 +1,14 @@
 <template>
   <div class="flex">
-    <button class="header-button" :aria-label="ariaMessage">
+    <button
+      class="header-button"
+      :aria-label="ariaMessage"
+      @click="$store.commit('hideProductInfo')"
+    >
       <CartArrowRight class="text-white text-opacity-100" />
       <span class="ml-4 text-lg">${{ $store.getters.cartTotalPrice }}</span>
     </button>
-    <button v-if="!isCartEmpty">
+    <button v-if="!isCartEmpty" @click="$store.commit('clearCart')">
       <CartRemove1 class="delete-cart-button ml-2" />
     </button>
   </div>

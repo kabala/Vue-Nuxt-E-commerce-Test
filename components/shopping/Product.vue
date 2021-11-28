@@ -1,8 +1,12 @@
 <template>
   <a
     href="/"
-    @click.prevent="() => $store.commit('showProductInfo', productData)"
-    class="card"
+    @click.prevent="
+      () => {
+        $store.commit('showProductInfo', productData)
+      }
+    "
+    class="card w-1/"
   >
     <div class="product">
       <figure class="relative">
@@ -29,7 +33,7 @@
             <button
               class="action-button"
               aria-label="Añadir al carrito"
-              @click.prevent="
+              @click.stop.prevent="
                 () => $store.dispatch('addOrIncreaseQuantity', productData)
               "
             >

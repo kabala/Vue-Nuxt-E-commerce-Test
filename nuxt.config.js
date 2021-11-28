@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/vuex-persist.ts', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

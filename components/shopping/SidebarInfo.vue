@@ -1,12 +1,15 @@
 <template>
-  <div class="sticky top-0">
+  <div class="sticky top-20">
     <div v-if="sidebarTitle">
-      <h2>{{ sidebarTitle }}</h2>
+      <h2 class="font-medium text-secondary py-4 text-xl">
+        {{ sidebarTitle }}
+      </h2>
     </div>
     <div>
       <ProductDescription
         v-if="$store.getters.currentSideInfo === sidebarStatus.product"
       />
+      <Cart v-if="$store.getters.currentSideInfo === sidebarStatus.cart" />
     </div>
   </div>
 </template>
@@ -15,15 +18,13 @@
 import Vue from 'vue'
 import { infoView } from '~/store'
 import ProductDescription from './ProductDescription.vue'
+import Cart from './Cart.vue'
 
 export default Vue.extend({
   data() {
     return {
       sidebarStatus: infoView,
     }
-  },
-  mounted() {
-    console.log('getters', this.$store.getters)
   },
   computed: {
     sidebarTitle() {
@@ -37,6 +38,6 @@ export default Vue.extend({
       }
     },
   },
-  components: { ProductDescription },
+  components: { ProductDescription, Cart },
 })
 </script>

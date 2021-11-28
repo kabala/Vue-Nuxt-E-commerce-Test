@@ -10,6 +10,16 @@ export function replaceObject(
     : recent
 }
 
+export function replaceEqualObject(
+  previous: Product,
+  recent: Product,
+  conditionalProperty: string = 'id'
+): Product {
+  return previous[conditionalProperty] === recent[conditionalProperty]
+    ? recent
+    : previous
+}
+
 export function changeQuantity(
   product: Product,
   increaseOrDecrease: boolean

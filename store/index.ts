@@ -1,5 +1,6 @@
 import {
   changeQuantity,
+  replaceEqualObject,
   replaceObject,
   updateCartAndProducts,
 } from '~/utils/vuex'
@@ -53,9 +54,9 @@ export const mutations = {
     )
   },
   removeProduct(store: RootState, sentProduct: Product) {
+    const { quantity, ...defaultProductInfo } = sentProduct
     store.products = store.products.map((product) => {
-      const { quantity, ...defaultProductInfo } = product
-      return replaceObject(product, defaultProductInfo)
+      return replaceEqualObject(product, defaultProductInfo)
     })
     store.cart = store.cart.filter((product) => product.id !== sentProduct.id)
   },

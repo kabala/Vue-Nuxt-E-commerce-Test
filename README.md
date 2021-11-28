@@ -1,5 +1,3 @@
-# vlipco-nuxt-2
-
 ## Build Setup
 
 ```bash

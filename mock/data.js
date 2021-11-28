@@ -13,12 +13,12 @@ function generateFakeData() {
           .slice(-2)
           .join(',')}`
       )
-      .then(({ request }) => {
+      .then(({ res }) => {
         resolve({
           id: faker.datatype.uuid(),
           name: productName,
           description: faker.commerce.productDescription(),
-          picture: request.res.responseUrl,
+          picture: res.responseUrl,
           price: parseFloat(faker.commerce.price()),
           ranking: Math.floor(Math.random() * 5 + 1),
         })

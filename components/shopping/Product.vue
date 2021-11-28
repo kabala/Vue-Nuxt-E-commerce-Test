@@ -29,7 +29,9 @@
             <button
               class="action-button"
               aria-label="Añadir al carrito"
-              @click.prevent="() => $store.commit('addProduct', productData)"
+              @click.prevent="
+                () => $store.dispatch('addOrIncreaseQuantity', productData)
+              "
             >
               <CartPlus decorative :size="28" />
             </button>

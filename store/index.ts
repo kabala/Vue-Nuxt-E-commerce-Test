@@ -82,6 +82,13 @@ export const actions = {
       commit('decreaseProductQuantity', product)
     }
   },
+  addOrIncreaseQuantity({ commit }: ActionArgs, product: Product) {
+    if (!product.quantity) {
+      commit('addProduct', product)
+    } else {
+      commit('increaseProductQuantity', product)
+    }
+  },
 }
 
 export const getters = {

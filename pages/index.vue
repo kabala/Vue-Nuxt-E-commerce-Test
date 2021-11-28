@@ -19,5 +19,12 @@ import HeaderVue from '~/components/shared/Header.vue'
 
 export default Vue.extend({
   components: { DefaultLayoutVue, ProductsList, SidebarInfo, HeaderVue },
+  mounted() {
+    const hola = window
+
+    if (window) {
+      console.log({ hola })
+    }
+  },
 })
 </script>

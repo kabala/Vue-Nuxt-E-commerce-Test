@@ -1969,11 +1969,6 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
-"@tailwindcss/aspect-ratio@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.3.0.tgz#f779ab3f07cac848fb844122d6662ba6560010b8"
-  integrity sha512-DMgWskNJR6FNPLbQ8Xoq/PKV/9DfNKh5dvKB+SM8x7lVl4+pnxlZ3Ns4+yGmurA/ze708HrnCG1tXk85HolJmw==
-
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -14095,6 +14090,11 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+vue-breakpoint@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-breakpoint/-/vue-breakpoint-2.1.0.tgz#a9a1561231a1d711783809ecf210013d5f18c08a"
+  integrity sha512-EcB8AK6QxLeTHcJUqs4ikTgd1wSKQXR8U6eNEm6u3r8qG8+f86Szog5l75+ObMo29NKWx10xHaNEO3QrLDrrdQ==
 
 vue-bundle-renderer@^0.3.3:
   version "0.3.3"

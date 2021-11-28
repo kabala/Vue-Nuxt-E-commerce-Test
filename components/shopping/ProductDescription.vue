@@ -16,7 +16,7 @@
       </div>
       <div class="my-6">
         <button
-          class="w-3/4 bg-primary hover:bg-primary-400 transition-colors text-white text-lg h-12 block mx-auto font-medium px-8 rounded-lg"
+          class="w-full lg:w-3/4 bg-primary-400 hover:bg-primary-300 transition-colors text-white text-lg h-12 block mx-auto font-medium px-8 rounded-lg"
           v-if="!activeProduct.quantity"
           @click="() => $store.commit('addProduct', activeProduct)"
         >
@@ -35,7 +35,7 @@
                 () => $store.dispatch('decreaseQuantityOrDelete', activeProduct)
               "
             >
-              <Minus />
+              <Minus decorative />
             </button>
             <span class="px-4 font-semibold text-lg text-secondary">{{
               activeProduct.quantity
@@ -47,7 +47,7 @@
                 () => $store.commit('increaseProductQuantity', activeProduct)
               "
             >
-              <Plus />
+              <Plus decorative />
             </button>
           </div>
         </div>
@@ -78,7 +78,8 @@ export default Vue.extend({
 
 <style scoped>
 .image-holder {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
+  @apply rounded-lg overflow-hidden;
 }
 
 .changer {

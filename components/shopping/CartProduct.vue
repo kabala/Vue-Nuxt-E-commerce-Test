@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div
-      class="flex flex-row flex-nowrap justify-between rounded-xl overflow-hidden bg-white bg-opacity-80 hover:bg-opacity-100"
+      class="flex flex-row flex-nowrap justify-between rounded-lg overflow-hidden bg-white bg-opacity-80 hover:bg-opacity-100"
     >
       <div class="img-ratio w-20 flex">
         <img :src="product.picture" :alt="product.name" />

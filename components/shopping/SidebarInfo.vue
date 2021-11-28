@@ -1,11 +1,16 @@
 <template>
-  <div class="sticky top-20">
-    <div v-if="sidebarTitle">
-      <h2 class="font-medium text-secondary py-4 text-xl">
+  <div class="sticky top-24">
+    <div class="flex items-center h-14" v-if="sidebarTitle">
+      <h2 class="font-medium text-secondary text-xl">
         {{ sidebarTitle }}
       </h2>
     </div>
     <div>
+      <IdleMessage
+        v-if="$store.getters.currentSideInfo === sidebarStatus.iddle"
+        message="Selecciona un producto"
+        ><Basket class="text-lightSecondary-800" :size="48" decorative
+      /></IdleMessage>
       <ProductDescription
         v-if="$store.getters.currentSideInfo === sidebarStatus.product"
       />
@@ -19,6 +24,8 @@ import Vue from 'vue'
 import { infoView } from '~/store'
 import ProductDescription from './ProductDescription.vue'
 import Cart from './Cart.vue'
+import IdleMessage from './IdleMessage.vue'
+import Basket from 'vue-material-design-icons/Basket.vue'
 
 export default Vue.extend({
   data() {
@@ -38,6 +45,6 @@ export default Vue.extend({
       }
     },
   },
-  components: { ProductDescription, Cart },
+  components: { ProductDescription, Cart, IdleMessage, Basket },
 })
 </script>

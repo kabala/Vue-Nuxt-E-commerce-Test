@@ -1,8 +1,13 @@
 <template>
-  <ul>
+  <ul class="flex" :aria-label="ariaText">
     <li aria-hidden="true" v-for="(star, index) in stars" :key="index">
-      <StarIcon v-if="star" />
-      <StarHalfIcon v-else />
+      <StarIcon :size="14" decorative v-if="star" class="text-secondary" />
+      <StarHalfIcon
+        :size="14"
+        decorative
+        class="text-secondary-400 text-opacity-80"
+        v-else
+      />
     </li>
   </ul>
 </template>
@@ -22,6 +27,9 @@ export default Vue.extend({
     },
   },
   computed: {
+    ariaText() {
+      return `ranking ${this.ranking} stars`
+    },
     stars() {
       return starMapper(this.ranking)
     },

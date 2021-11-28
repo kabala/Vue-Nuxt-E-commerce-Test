@@ -1,22 +1,22 @@
 <template>
   <div>
-    <header class="h">
-      <div class="h__inner mw9 center">
-        <div class="h__logo">
+    <header class="bg-primary">
+      <div
+        class="container mx-auto flex flex-row flex-nowrap justify-center md:justify-between items-center h-20"
+      >
+        <div class="md:flex-1 flex-none">
           <h1>
             <img src="/logo.svg" alt="Random Store" />
           </h1>
         </div>
-        <div class="h__options">
+        <div class="flex-none hidden md:block">
           <slot name="header" />
         </div>
       </div>
     </header>
-    <div class="mw9 center">
-      <div class="c flex">
-        <main class="c__list w-75"><slot /></main>
-        <aside class="c__aside w-25"><slot name="aside" /></aside>
-      </div>
+    <div class="container mx-auto flex my-2.5 gap-8">
+      <main class="w-2/3"><slot /></main>
+      <aside class="w-1/3"><slot name="aside" /></aside>
     </div>
   </div>
 </template>

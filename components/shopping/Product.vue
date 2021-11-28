@@ -2,29 +2,38 @@
   <a
     href="/"
     @click.prevent="() => $store.commit('showProductInfo', productData)"
+    class="card"
   >
     <div class="product">
-      <figure class="product__image">
-        <div v-if="productData.quantity" class="product_q">
+      <figure class="relative">
+        <div v-if="productData.quantity" class="quantity">
           {{ productData.quantity }}
         </div>
         <img :src="productData.picture" :alt="productData.name" />
       </figure>
-      <div class="product__info">
-        <h3>{{ productData.name }}</h3>
-      </div>
-      <div class="product__details">
-        <div class="product__price">
-          <strong>{{ productData.price }}</strong>
-          <StarRanking :ranking="productData.ranking" />
-        </div>
+      <div class="p-3">
         <div>
-          <button
-            aria-label="Añadir al carrito"
-            @click.prevent="() => $store.commit('addProduct', productData)"
-          >
-            <CartPlus />
-          </button>
+          <h3 class="font-medium text-primary text-xl my-2">
+            {{ productData.name }}
+          </h3>
+          <p class="truncate">{{ productData.description }}</p>
+        </div>
+        <div class="flex justify-between mt-4">
+          <div class="product__price flex items-center">
+            <strong class="mr-3 text-xl text-secondary"
+              >${{ productData.price }}</strong
+            >
+            <StarRanking decorative :ranking="productData.ranking" />
+          </div>
+          <div>
+            <button
+              class="action-button"
+              aria-label="Añadir al carrito"
+              @click.prevent="() => $store.commit('addProduct', productData)"
+            >
+              <CartPlus decorative :size="28" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

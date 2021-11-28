@@ -1,9 +1,9 @@
 <template>
-  <div class="sidebar">
-    <div v-if="sidebarTitle" class="sidebar__title">
+  <div class="sticky top-0">
+    <div v-if="sidebarTitle">
       <h2>{{ sidebarTitle }}</h2>
     </div>
-    <div class="sidebar__content">
+    <div>
       <ProductDescription
         v-if="$store.getters.currentSideInfo === sidebarStatus.product"
       />

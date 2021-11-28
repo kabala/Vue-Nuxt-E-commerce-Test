@@ -1,8 +1,8 @@
 <template>
-  <div class="products">
-    <div class="products__head">{{ $store.state.products.length }}</div>
-    <div class="products__content">
-      <div class="products__warning" v-if="!$store.state.products.length">
+  <div class="">
+    <div>{{ $store.state.products.length }}</div>
+    <div class="grid grid-flow-col grid-rows-6 gap-4">
+      <div v-if="!$store.state.products.length">
         <h4>Lo sentimos, no hay productos que mostrar en este momento.</h4>
         <button>Obtener Productos</button>
       </div>

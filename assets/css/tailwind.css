@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-lightSecondary;
+}
+
+.header-button {
+  @apply rounded-md flex
+  flex-row flex-nowrap items-center bg-secondary 
+  hover:bg-secondary-400 transition-colors px-5 h-9 
+  text-white font-medium;
+}
+
+.action-button {
+  @apply text-secondary hover:text-white transition-colors h-10 px-2 hover:bg-secondary rounded-lg;
+}
+
+.delete-cart-button {
+  @apply rounded-md flex
+  flex-row flex-nowrap items-center bg-secondary-900
+  hover:bg-secondary-800 transition-colors px-2 h-9 
+  text-white text-opacity-60 hover:text-opacity-100 font-medium;
+}
+
+.quantity {
+  @apply absolute -bottom-3 left-2 z-10 h-8
+  w-8 text-white font-medium rounded-2xl 
+  bg-primary-300 flex items-center justify-center
+  border-white border-2 border-opacity-50;
+}
+
+.card {
+  @apply bg-white rounded-lg overflow-hidden border-white border-2 hover:border-secondary transition-all;
+}

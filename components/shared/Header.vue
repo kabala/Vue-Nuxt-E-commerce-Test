@@ -1,8 +1,30 @@
 <template>
-  <div class="cta">asd</div>
+  <div class="flex">
+    <button class="header-button" :aria-label="ariaMessage">
+      <CartArrowRight class="text-white text-opacity-100" />
+      <span class="ml-4 text-lg">${{ $store.getters.cartTotalPrice }}</span>
+    </button>
+    <button v-if="!isCartEmpty">
+      <CartRemove1 class="delete-cart-button ml-2" />
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-export default Vue.extend({})
+import CartArrowRight from 'vue-material-design-icons/CartArrowRight.vue'
+import CartRemove1 from 'vue-material-design-icons/CartRemove.vue'
+export default Vue.extend({
+  components: { CartArrowRight, CartRemove1 },
+  computed: {
+    isCartEmpty() {
+      return !this.$store.getters.cartTotalPrice
+    },
+    ariaMessage() {
+      return this.isCartEmpty
+        ? 'Tu carrito está vacío'
+        : `Tus items acumulan un valor de \$${this.$store.getters.cartTotalPrice} pesos`
+    },
+  },
+})
 </script>

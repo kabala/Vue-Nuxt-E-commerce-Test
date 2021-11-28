@@ -1,5 +1,5 @@
 <template>
-  <div class="side-product">
+  <div class="description">
     <figure class="side-product__image">
       <img :src="activeProduct.picture" :alt="activeProduct.name" />
     </figure>

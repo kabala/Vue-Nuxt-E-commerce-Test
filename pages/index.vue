@@ -27,12 +27,5 @@ export default Vue.extend({
   created() {
     this.$store.commit('hideProductInfo')
   },
-  mounted() {
-    const hola = window
-
-    if (window) {
-      console.log({ hola })
-    }
-  },
 })
 </script>

@@ -14,7 +14,7 @@
         </div>
       </div>
     </header>
-    <main class="w-full md:w-2/3 lg:w-3/4"><slot /></main>
+    <main class="w-full md:w-2/3 lg:w-3/4 px-4 m:px-0"><slot /></main>
     <slot name="aside" />
   </div>
 </template>

@@ -1,20 +1,22 @@
 <template>
-  <div>
-    <figure class="image-holder">
+  <div class="flex flex-col flex-auto">
+    <figure class="image-holder flex-initial">
       <img :src="activeProduct.picture" :alt="activeProduct.name" />
     </figure>
-    <div class="p-4">
-      <h3 class="text-primary-400 mb-2 font-semibold text-2xl">
-        {{ activeProduct.name }}
-      </h3>
-      <p>{{ activeProduct.description }}</p>
-      <div class="flex items-center mt-6">
-        <strong class="mr-2 text-secondary font-bold text-2xl"
-          >${{ activeProduct.price }}</strong
-        >
-        <StarRanking :ranking="activeProduct.ranking" />
+    <div class="md:px-4 pt-4 flex flex-col justify-between flex-auto">
+      <div>
+        <h3 class="text-primary-400 mb-2 font-semibold text-2xl">
+          {{ activeProduct.name }}
+        </h3>
+        <p>{{ activeProduct.description }}</p>
+        <div class="flex items-center mt-6">
+          <strong class="mr-2 text-secondary font-bold text-2xl"
+            >${{ activeProduct.price }}</strong
+          >
+          <StarRanking :ranking="activeProduct.ranking" />
+        </div>
       </div>
-      <div class="my-6">
+      <div class="mt-6">
         <button
           class="cart-action-button"
           v-if="!activeProduct.quantity"

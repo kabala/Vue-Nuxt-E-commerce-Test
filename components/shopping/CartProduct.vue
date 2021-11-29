@@ -25,7 +25,7 @@
       </div>
     </div>
     <button
-      class="absolute flex items-center justify-center right-1 md:-right-2 top-1.5 w-6 h-6 rounded-2xl bg-lightSecondary-600 text-primary-900 text-opacity-40 hover:bg-primary-400 hover:text-white hover:text-opacity-100"
+      class="absolute flex items-center justify-center right-1 top-1.5 w-6 h-6 rounded-2xl bg-lightSecondary-600 text-primary-900 text-opacity-40 hover:bg-primary-400 hover:text-white hover:text-opacity-100"
       aria-label="eliminar producto del carrito"
       @click="() => $store.commit('removeProduct', product)"
     >

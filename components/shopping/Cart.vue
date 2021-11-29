@@ -9,7 +9,6 @@
     </div>
     <div class="mt-4 box-content h-auto">
       <div
-        v-if="isMobile"
         class="flex items-center justify-between h-14 border-t border-b mb-4 border-lightSecondary-900"
       >
         <span class="text-primary-400">Total a pagar:</span>
@@ -39,12 +38,6 @@ import { mapGetters } from 'vuex'
 
 export default Vue.extend({
   components: { CartProduct, PaymentButton },
-  props: {
-    isMobile: {
-      type: Boolean,
-      required: true,
-    },
-  },
   data: () => ({
     readyToPay: false,
   }),

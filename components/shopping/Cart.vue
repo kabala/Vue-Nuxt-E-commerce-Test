@@ -5,14 +5,16 @@
       :key="product.id"
       :product="product"
     />
-    <button
-      v-if="!readyToPay"
-      @click="() => (readyToPay = true)"
-      class="cart-action-button"
-    >
-      Pagar Ahora
-    </button>
-    <PaymentButton v-if="readyToPay" />
+    <div class="mt-4 pt-2 border-t border-lightSecondary-900">
+      <button
+        v-if="!readyToPay"
+        @click="() => (readyToPay = true)"
+        class="cart-action-button"
+      >
+        Pagar Ahora
+      </button>
+      <PaymentButton v-else />
+    </div>
   </div>
 </template>
 

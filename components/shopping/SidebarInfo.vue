@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar" :class="{ popup: shouldPopMobileInfo }">
+  <div class="sidebar" :class="{ popup: shouldPopMobileInfo }">
     <div class="relative md:sticky top-auto md:top-24">
       <div class="flex items-center h-14" v-if="sidebarTitle">
         <button
@@ -26,7 +26,7 @@
         <Cart v-show="$store.getters.currentSideInfo === sidebarStatus.cart" />
       </div>
     </div>
-  </aside>
+  </div>
 </template>
 
 <script lang="ts">
@@ -83,7 +83,7 @@ export default Vue.extend({
   height: calc(100vh - 10rem);
 
   @apply fixed left-0 md:left-auto -bottom-full md:bottom-auto z-10 bg-white px-6
-  md:relative w-full md:px-0 md:h-auto md:bg-transparent;
+  md:relative w-full md:px-0 md:h-auto md:bg-transparent md:sticky md:top-20;
 }
 
 .popup {

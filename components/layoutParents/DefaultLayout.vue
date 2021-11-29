@@ -15,9 +15,11 @@
       </div>
     </header>
     <div class="container mx-auto flex flex-col md:flex-row">
-      <main class="w-full md:w-2/3 lg:w-3/4 px-4 m:px-0"><slot /></main>
+      <main class="w-full md:w-2/3 lg:w-3/4 px-4 m:px-0 pb-24">
+        <slot />
+      </main>
       <aside
-        class="pb-20 m:pb-0 w-full mx-auto md:mx-0 md:w-1/3 lg:w-1/4 flex mt-2.5 mb-10 gap-8 lg:px-5"
+        class="m:pb-0 w-full mx-auto md:mx-0 md:w-1/3 lg:w-1/4 flex md:mb-10 gap-8 lg:px-5"
       >
         <slot name="aside" />
       </aside>

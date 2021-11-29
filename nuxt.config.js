@@ -3,8 +3,8 @@ import fs from 'fs'
 
 export default defineNuxtConfig({
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: true,
-  target: 'server',
+  // ssr: false,
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/vuex-persist.ts', ssr: false },
     { src: '~/plugins/vue-breakpoint.ts', ssr: false },
-    '~/plugins/format-currency.ts',
+    { src: '~/plugins/format-currency.ts', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -38,3 +38,9 @@ body {
 .card {
   @apply bg-white rounded-lg overflow-hidden border-white border-2 hover:border-secondary transition-all;
 }
+
+.cart-action-button {
+  @apply w-full lg:w-3/4 bg-primary-400 hover:bg-primary-300
+  transition-colors text-white text-lg h-12 block
+  mx-auto font-medium px-8 rounded-lg;
+}

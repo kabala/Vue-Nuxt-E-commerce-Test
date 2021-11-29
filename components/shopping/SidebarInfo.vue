@@ -3,6 +3,7 @@
     <div class="relative md:sticky top-auto md:top-24">
       <div class="flex items-center h-14" v-if="sidebarTitle">
         <button
+          v-if="isMobile"
           @click="() => $emit('hideMobileFloatingScreen')"
           aria-label="ocultar"
           class="w-7 h-7 flex items-center justify-center text-primary-400 mr-2"
@@ -82,7 +83,7 @@ export default Vue.extend({
   height: calc(100vh - 10rem);
 
   @apply fixed left-0 md:left-auto -bottom-full md:bottom-auto z-10 bg-white px-6
-  md:relative w-full md:w-1/3 lg:w-1/4 md:px-0 md:h-auto md:bg-transparent;
+  md:relative w-full md:px-0 md:h-auto md:bg-transparent;
 }
 
 .popup {

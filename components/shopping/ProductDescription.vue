@@ -16,7 +16,7 @@
       </div>
       <div class="my-6">
         <button
-          class="w-full lg:w-3/4 bg-primary-400 hover:bg-primary-300 transition-colors text-white text-lg h-12 block mx-auto font-medium px-8 rounded-lg"
+          class="cart-action-button"
           v-if="!activeProduct.quantity"
           @click="() => $store.commit('addProduct', activeProduct)"
         >

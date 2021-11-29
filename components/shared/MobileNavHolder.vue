@@ -1,9 +1,6 @@
 <template>
   <breakpoint>
-    <div
-      slot-scope="{ smDown }"
-      class="pb-20 m:pb-0 container mx-auto flex mt-2.5 mb-10 gap-8 lg:px-5"
-    >
+    <div class="w-full" slot-scope="{ smDown }">
       <SidebarInfo
         @hideMobileFloatingScreen="hideMobileScreen"
         :isMobile="smDown"

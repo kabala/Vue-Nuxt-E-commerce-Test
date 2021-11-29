@@ -1,7 +1,12 @@
 <template>
   <div class="sidebar" :class="{ popup: shouldPopMobileInfo }">
-    <div class="relative md:sticky top-auto md:top-24">
-      <div class="flex items-center h-14" v-if="sidebarTitle">
+    <div
+      class="relative flex flex-col md:sticky top-auto md:top-24 h-full md:h-auto"
+    >
+      <div
+        class="flex items-center h-14 flex-grow-1 flex-shrink-0"
+        v-if="sidebarTitle"
+      >
         <button
           v-if="isMobile"
           @click="() => $emit('hideMobileFloatingScreen')"
@@ -14,7 +19,7 @@
           {{ sidebarTitle }}
         </h2>
       </div>
-      <div>
+      <div class="flex-auto flex flex-col min-h-0">
         <ProductDescription
           v-if="$store.getters.currentSideInfo === sidebarStatus.product"
         />
@@ -23,7 +28,10 @@
           message="Selecciona un producto"
           ><Basket class="text-lightSecondary-800" :size="48" decorative
         /></IdleMessage>
-        <Cart v-show="$store.getters.currentSideInfo === sidebarStatus.cart" />
+        <Cart
+          v-show="$store.getters.currentSideInfo === sidebarStatus.cart"
+          :isMobile="isMobile"
+        />
       </div>
     </div>
   </div>
@@ -83,7 +91,7 @@ export default Vue.extend({
   height: calc(100vh - 10rem);
 
   @apply fixed left-0 md:left-auto -bottom-full md:bottom-auto z-10 bg-white px-6
-  md:relative w-full md:px-0 md:h-auto md:bg-transparent md:sticky md:top-20;
+  md:relative w-full md:px-0 md:h-auto md:bg-transparent md:sticky md:top-20 pb-4;
 }
 
 .popup {

@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/vuex-persist.ts', ssr: false },
     { src: '~/plugins/vue-breakpoint.ts', ssr: false },
+    '~/plugins/format-currency.ts',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

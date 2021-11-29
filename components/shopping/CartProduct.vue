@@ -16,11 +16,13 @@
           v-if="product.quantity > 1"
           class="flex border-b border-black border-opacity-10 pl-2 pr-1 text-sm"
         >
-          <strong class="font-medium">${{ product.price }}</strong>
+          <strong class="font-medium" v-currency>{{ product.price }}</strong>
           &nbsp;x&nbsp;<span>{{ product.quantity }}</span>
         </div>
-        <strong class="text-sm rounded-lg h-5 mt-1 bg-secondary text-white px-2"
-          >${{ product.quantity * product.price }}</strong
+        <strong
+          class="text-sm rounded-lg h-5 mt-1 bg-secondary text-white px-2"
+          v-currency
+          >{{ product.quantity * product.price }}</strong
         >
       </div>
     </div>

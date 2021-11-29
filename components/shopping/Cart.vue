@@ -12,9 +12,9 @@
         class="flex items-center justify-between h-14 border-t border-b mb-4 border-lightSecondary-900"
       >
         <span class="text-primary-400">Total a pagar:</span>
-        <strong class="text-secondary font-bold text-xl"
-          >${{ $store.getters.cartTotalPrice }}</strong
-        >
+        <strong class="text-secondary font-bold text-xl" v-currency>{{
+          $store.getters.cartTotalPrice
+        }}</strong>
       </div>
       <div class="h-12">
         <button

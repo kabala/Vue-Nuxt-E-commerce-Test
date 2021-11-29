@@ -10,9 +10,9 @@
         </h3>
         <p>{{ activeProduct.description }}</p>
         <div class="flex items-center mt-6">
-          <strong class="mr-2 text-secondary font-bold text-2xl"
-            >${{ activeProduct.price }}</strong
-          >
+          <strong class="mr-2 text-secondary font-bold text-2xl" v-currency>{{
+            activeProduct.price
+          }}</strong>
           <StarRanking :ranking="activeProduct.ranking" />
         </div>
       </div>

@@ -24,9 +24,9 @@
         </div>
         <div class="flex justify-between mt-4">
           <div class="product__price flex items-center">
-            <strong class="mr-3 text-xl text-secondary"
-              >${{ productData.price }}</strong
-            >
+            <strong class="mr-3 text-xl text-secondary" v-currency>{{
+              productData.price
+            }}</strong>
             <StarRanking decorative :ranking="productData.ranking" />
           </div>
           <div>

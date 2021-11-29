@@ -121,7 +121,9 @@ export const getters = {
   },
   cartTotalPrice(state: RootState): number {
     return state.cart.length
-      ? state.cart.reduce((a, c) => a + c.price * (c.quantity || 1), 0)
+      ? Math.floor(
+          state.cart.reduce((a, c) => a + c.price * (c.quantity || 1), 0)
+        )
       : 0
   },
 }

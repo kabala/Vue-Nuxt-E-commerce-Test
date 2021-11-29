@@ -82,6 +82,15 @@ export default Vue.extend({
         : false
     },
   },
+  watch: {
+    shouldPopMobileInfo(newVal) {
+      if (newVal) {
+        document.body.classList.add('lock-scroll')
+      } else {
+        document.body.classList.remove('lock-scroll')
+      }
+    },
+  },
   components: { ProductDescription, Cart, IdleMessage, Basket, ChevronLeft },
 })
 </script>

@@ -33,19 +33,5 @@ import MobileNavHolder from '../shared/MobileNavHolder.vue'
 
 export default Vue.extend({
   components: { MobileNavHolder },
-  mounted() {
-    function toggleMainScroll(e: Event) {
-      const target = e.target as HTMLElement
-      if (target.closest('.mobile-nav-button')) {
-        document.body.classList.toggle('lock-scroll')
-      }
-    }
-
-    document.body.addEventListener('click', toggleMainScroll)
-
-    this.$once('hook:beforeDestroy', () =>
-      document.body.removeEventListener('click', toggleMainScroll)
-    )
-  },
 })
 </script>

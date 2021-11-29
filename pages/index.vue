@@ -5,7 +5,7 @@
     </template>
     <ProductsList />
     <template #aside>
-      <SidebarInfo />
+      <MobileNavHolder />
     </template>
   </DefaultLayoutVue>
 </template>
@@ -14,11 +14,19 @@
 import Vue from 'vue'
 import DefaultLayoutVue from '~/components/layoutParents/DefaultLayout.vue'
 import ProductsList from '~/components/shopping/ProductsList.vue'
-import SidebarInfo from '~/components/shopping/SidebarInfo.vue'
 import HeaderVue from '~/components/shared/Header.vue'
+import MobileNavHolder from '~/components/shared/MobileNavHolder.vue'
 
 export default Vue.extend({
-  components: { DefaultLayoutVue, ProductsList, SidebarInfo, HeaderVue },
+  components: {
+    DefaultLayoutVue,
+    ProductsList,
+    HeaderVue,
+    MobileNavHolder,
+  },
+  created() {
+    this.$store.commit('hideProductInfo')
+  },
   mounted() {
     const hola = window
 
